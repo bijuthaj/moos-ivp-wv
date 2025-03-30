@@ -7,6 +7,10 @@ MOOSTimeWarp = 1
 LatOrigin  = 43.825300 
 LongOrigin = -70.330400 
 
+//LatOrigin  = 9.944977
+//LongOrigin = 76.339900
+
+
 //------------------------------------------
 // Antler config block
 ProcessConfig = ANTLER
@@ -20,7 +24,8 @@ ProcessConfig = ANTLER
   Run = pMarineViewer	@ NewConsole = false
   Run = uProcessWatch @ NewConsole = false
   Run = pHelmIvP      @ NewConsole = false
-  //Run = pOdometry     @ NewConsole = false
+  Run = pOdometry     @ NewConsole = false
+  Run = pLogger       @ NewConsole = false
 }
 
 //------------------------------------------
@@ -150,3 +155,20 @@ ProcessConfig = pNodeReporter
 
   vessel_type = kayak
 }
+
+ProcessConfig = pOdometry
+{
+  AppTick	  = 10
+  CommsTick	= 10
+
+  app_logging = log
+}
+
+ProcessConfig = pLogger
+ {
+   AppTick   = 8
+   CommsTick = 8
+
+   AsyncLog = true
+   WildCardLogging = true
+ }

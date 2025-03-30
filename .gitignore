@@ -54,7 +54,10 @@ XLog*/
 build/
 bin/
 lib/
+log/
 
 # Temp files (emacs, etc)
 *#
 *~
+
+.vscode
